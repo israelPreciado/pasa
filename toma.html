@@ -1,0 +1,61 @@
+
+<!--#include file="funcion/funcion.inc"-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Obras</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="css/login.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="alertify.js-0.3.11/themes/alertify.core.css" />
+<link rel="stylesheet" href="alertify.js-0.3.11/themes/alertify.default.css" id="toggleCSS" />
+<Script language="javascript">
+ function Enviar(modulo){
+	 document.getElementById("frm_modulos").action="avanceObra.asp"
+	 document.getElementById("hddnEnviar").value=modulo
+	 document.getElementById("frm_modulos").submit()
+ }
+ function home(){
+	document.getElementById('frm_modulos').action="inicio.asp"
+	document.getElementById('frm_modulos').submit()
+}
+ function exit(){
+	 document.getElementById('frm_modulos').action="cerrar_sesion.asp"
+	 document.getElementById('frm_modulos').submit()
+ }
+ function back(){
+	document.getElementById('frm_modulos').action="detalleCR.asp"
+	document.getElementById('frm_modulos').submit()
+}
+</script>
+<%
+modulo=request("hddnEnviar")
+%>
+</head>
+<body>
+<form name="frm_modulos" id="frm_modulos" method="post">
+<div id="pagina">
+<div id="header">
+<div id="logo"> 
+<p><strong>Modulo de supervisi&oacute;n de Obra</strong><p>   
+</div>
+    <div id="barrasuperior">
+    <table><tr><td width="35%"><a href="#" style="padding-left:55%"><span class="icon-arrow-left" onclick="back()"></span></a></td><td width="35%"><a href="#" style="padding-left:55%"><span class="icon-home3" onclick="home()"></span></a></td><td><a href="#" style="padding-left:55%"><span class="icon-exit" onclick="exit()"></span></a></td></tr></table>
+      &nbsp;
+    </div>
+</div>
+<div align="center" id="menu_inicio">
+ <div id="detalle">
+      <p>CR: <strong><%=session.Contents("cr")%></strong></p>
+ </div>
+
+
+    <input type="hidden" value="true"  id="hddnEnviar" name="hddnEnviar" value="<%=modulo%>"/>
+ 
+
+</div>
+</div>
+</form>
+</body>
+</html>

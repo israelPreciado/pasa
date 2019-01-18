@@ -1,0 +1,126 @@
+
+
+.demo-2 body {
+	background: #fff;
+}
+
+
+
+.main {
+	width: 80%;
+	max-width: 960px;
+	padding: 0px;
+	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+	alignment-adjust:central;
+}
+
+.main p {
+	font-size: 16px;
+	line-height: 1.4;
+	text-align: left;
+}
+
+.main p:nth-of-type(2){
+	-moz-column-count: 2;
+	-moz-column-gap: 20px;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 20px;
+	-ms-column-count: 2;
+	-ms-column-gap: 20px;
+	-o-column-count: 2;
+	-o-column-gap: 20px;
+	column-count: 2;
+	column-gap: 20px;
+}
+
+.main p:nth-of-type(4){
+	-moz-column-count: 3;
+	-moz-column-gap: 15px;
+	-o-column-count: 3;
+	-o-column-gap: 15px;
+	-ms-column-count: 3;
+	-ms-column-gap: 15px;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 15px;
+	column-count: 3;
+	column-gap: 15px;
+}
+
+/* DEMO 2 */
+
+.demo-2 .main h1 {
+	margin: 1em 0 0.5em 0;
+	font-weight: normal;
+	position: relative;
+	text-shadow: 0 -1px rgba(0,0,0,0.6);
+	font-size: 20px;
+	line-height: 40px;
+	background: #055890;
+	background: rgba(5,88,144, 0.8);
+	border: 1px solid #fff;
+	padding: 5px 15px;
+	color: white;
+	border-radius: 0px 10px 0px 10px;
+	box-shadow: 15px 15px 5px rgba(217,237,251, 0.5);
+	font-family:Helvetica, sans-serif;
+	text-align:center;
+}
+
+.demo-2 .main h2 {
+	margin: 1em 0 0.5em 0;
+	font-weight: normal;
+	position: relative;
+	text-shadow: 0 -1px rgba(0,0,0,0.6);
+	font-size: 30px;
+	line-height: 40px;
+    background:rgba(144,25,28,.9);
+	border: 1px solid #fff;
+	padding: 5px 15px;
+	color: white;
+	border-radius: 0px 10px 0px 10px;
+	box-shadow: 15px 15px 5px rgba(253,66,115, 0.3);
+	font-family:Tahoma, Geneva, sans-serif;
+	text-align:center;
+}
+.demo-2 .main img {
+	width:500px;
+}
+@media screen  and (max-width: 800px) {
+.demo-2 .main img {
+	margin: 1em 0 0.5em 0;
+	font-weight: normal;
+	position: relative;
+	font-size: 30px;
+	line-height: 40px;
+	text-align:center;
+	alignment-adjust:central;
+	width:200px;
+}
+
+}
+
+.demo-2 .main h3 {
+	margin: 1em 0 0.5em 0;
+	font-weight: 600;
+	font-family: 'Titillium Web', sans-serif;
+	position: relative;
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+	font-size: 22px;
+	line-height: 40px;
+	color: #355681;
+	text-transform: uppercase;
+	border-bottom: 1px solid rgba(53,86,129, 0.3);
+	text-align: left;
+}
+
+.demo-2 .main h4 {
+	margin: 1em 0 0.5em 0;
+	font-weight: 600;
+	font-family: 'Titillium Web', sans-serif;
+	position: relative;
+	font-size: 18px;
+	line-height: 20px;
+	color: #788699;
+	font-family: 'Muli', sans-serif;
+}
+
