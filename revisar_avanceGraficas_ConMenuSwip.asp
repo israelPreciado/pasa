@@ -701,8 +701,11 @@ end if
 <td align='center' style='cursor:pointer;border:hidden'  ><%=round(octu,2)*100%> %</td>
 <td align='center' style='cursor:pointer;border:hidden'  ><%=round(nov,2)*100%> %</td>
 <td align='center' style='cursor:pointer;border:hidden'  ><%=round(dic,2)*100%> %</td>
-<td align='center' style='cursor:pointer;border:hidden'  ><%=ROUND(tr/tp,2)*100%> %</td>
-
+<% if tP = 0 then %>
+	<td align='center' style='cursor:pointer;border:hidden'  >0 %</td>
+<% else %>
+	<td align='center' style='cursor:pointer;border:hidden'  ><%=ROUND(tr/tp,2)*100%> %</td>
+<% end if %>
 						</tr>
 					</tbody>
 				</table>
@@ -718,51 +721,7 @@ end if
 		</td>
 		<!--Fin Titulo Financiero-->
 	</tr>
-	<tr>
-		<!--Inicio Tabla Financiero-->
-		<td>
-			<table width="95%" align="center">
-				<tr>
-					<td width="20%" style = "vertical-align: top">Presupuesto</td>
-					<td>
-						<div class="progress">
-							<div class="progress-bar progress-bar-danger" role="progressbar" style="width: 100%">
-								<%=cargaPresupuestoTotal(session.contents("zonaDirector"),1)%>
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" style = "vertical-align: top">Ejecutado</td>
-					<td>
-						<div class="progress">
-							
-								<div class="progress-bar progress-bar-info" title="<%=cargaPorcentajeEjecutado(session.contents("zonaDirector"))%>%" role="progressbar" style="width:<%=cargaPorcentajeEjecutado(session.contents("zonaDirector"))%>%">
-								<p><font color="black"><%=cargaPresupuestoEjecutado(session.contents("zonaDirector"),1)%> </font></p>
-								</div>
-						
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" style = "vertical-align: top">Pagado</td>
-					<td>
-						<div class="progress">
-							<div class="progress-bar progress-bar-success" title="<%=cargaPorcentajePagado(session.contents("zonaDirector"))%>%" role="progressbar" style="width:<%=cargaPorcentajePagado(session.contents("zonaDirector"))%>%">
-								<p><font color="black"><%=cargaPresupuestoPagado(session.contents("zonaDirector"),1)%> </font></p>
-							</div>
 	
-						</div>
-					</td>
-				</tr>
-				<tr>
-					
-					<td align="right"><table width="50%"><tr><input  type="button" value="Ver Detalle" onclick="verDetalle()" name="btnEnviar" /></tr></td>
-				</tr>
-			</table>
-		</td>
-		<!--Fin Tabla Financiero-->
-	</tr>
 </table>
 	
 <!--Fin Contenido-->
