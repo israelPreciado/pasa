@@ -1,5 +1,5 @@
 <%
-ConnStr="DRIVER={MySQL ODBC 5.3 ANSI Driver};server=scanda500;database=prueba_sistema; uid=xmd7310;pwd=XMD7310; option=3"
+ConnStr="DRIVER={MySQL ODBC 5.3 ANSI Driver};server=scanda500;database=plasticos; uid=xmd7310;pwd=XMD7310; option=3"
 '
 
 function cargaProductos(id_proveedor, elemento,familia)
@@ -28,7 +28,7 @@ else
 				regresar=regresar &	"<div class=""opacity"" style=""font-size:xx-small""> 3</div><img src=""IMG/5.png"" width=""25"" title=""MOSTRAR PRODUCTOS QUE AFECTAN ESTE PRODUCTO"" onclick=""showAfectaInsumos('" & rs2("codigo_producto") & "','" & rs2("familia") & "','" & rs2("movimiento") & "','" & rs2("color") & "')""/>"
 			end if	
 		end if	
-		regresar=regresar & "</td><td><font size=""-2"">" & rs2("familia") & "</font></td><td title=""MOSTRAR GRAFICA DEL COMPORTAMIENTO DEL PRODUCTO"" onclick=""showGrafica('" & rs2("codigo_producto") & "','prueba_sistema')""><font size=""1"">" & rs2("codigo_producto") & "</font></td><td><font size=""-2"">" & server.HTMLEncode(rs2("producto").value) & "</font></td><td><font size=""-2"">" & rs2("movimiento") & "</font></td>"
+		regresar=regresar & "</td><td><font size=""-2"">" & rs2("familia") & "</font></td><td title=""MOSTRAR GRAFICA DEL COMPORTAMIENTO DEL PRODUCTO"" onclick=""showGrafica('" & rs2("codigo_producto") & "','plasticos')""><font size=""1"">" & rs2("codigo_producto") & "</font></td><td><font size=""-2"">" & server.HTMLEncode(rs2("producto").value) & "</font></td><td><font size=""-2"">" & rs2("movimiento") & "</font></td>"
 		regresar=regresar & "<td><font size=""-2"">" & formatnumber(rs2("stock_total")) & "</font></td><td><font size=""-2"">" & formatnumber(rs2("CONSUMO_ACUMULADO_MES")) & "</font></td><td><font size=""-2"">" & formatnumber(rs2("consumo_cobertura")) & "</font></td><td><font size=""3"">" & round(rs2("SEMANAS_STOCK")) & "</font></td></tr>"
 	rs2.movenext
 	wend  
@@ -159,7 +159,7 @@ set conn3=nothing
 lastUpdate=response.write(regresar)
 end function
 
-function cargaElementosprueba_sistema(elemento)
+function cargaElementosPlasticos(elemento)
 set conn3=server.CreateObject("adodb.connection")
 set rs2=server.CreateObject("adodb.recordset")
 conn3.open connstr
@@ -181,13 +181,13 @@ regresar=""
 rs2.open sql3, conn3
 
 if rs2.eof then
-	cargaElementosprueba_sistema=response.write("<td align=""center"" onclick=""alert('NO EXISTE DETALLE')"">0</td>")
+	cargaElementosPlasticos=response.write("<td align=""center"" onclick=""alert('NO EXISTE DETALLE')"">0</td>")
 else
 	regresar=regresar & "<td align=""center"""
 	if rs2("numElementos")="0" then
 	regresar=regresar & "onclick=""alert('NO EXISTE DETALLE')"">" & rs2("numElementos") & "</td>"
 	else
-	regresar=regresar & "onclick=""show_detalle('" & elemento & "',"& rs2("numElementos") &", 'prueba_sistema')"">" & rs2("numElementos") & "</td>" 
+	regresar=regresar & "onclick=""show_detalle('" & elemento & "',"& rs2("numElementos") &", 'plasticos')"">" & rs2("numElementos") & "</td>" 
 	end if
 end if
 
@@ -195,7 +195,7 @@ rs2.close
 conn3.close 
 set rs2=nothing
 set conn3=nothing
-cargaElementosprueba_sistema=response.write(regresar)
+cargaElementosPlasticos=response.write(regresar)
 end function
 
 function cargaElementosInsumos(elemento)
@@ -220,7 +220,7 @@ regresar=""
 rs2.open sql3, conn3
 
 if rs2.eof then
-	cargaElementosprueba_sistema=response.write("<td align=""center"" onclick=""alert('NO EXISTE DETALLE')"">0</td>")
+	cargaElementosPlasticos=response.write("<td align=""center"" onclick=""alert('NO EXISTE DETALLE')"">0</td>")
 else
 	regresar=regresar & "<td align=""center"""
 	if rs2("numElementos")="0" then
@@ -274,9 +274,9 @@ end if
 rs2.open sql3, conn3
 
 if rs2.eof then
-	cargaElementosprueba_sistema_paso2=response.write("<td bgcolor=""#95b3d7"" align=""center"" onclick=""alert('NO EXISTE DETALLE')""><font color=""#FFFFFF"">0</font></td>")
+	cargaElementosPlasticos_paso2=response.write("<td bgcolor=""#95b3d7"" align=""center"" onclick=""alert('NO EXISTE DETALLE')""><font color=""#FFFFFF"">0</font></td>")
 else
-	response.write("<td bgcolor=""#95b3d7"" align=""center"" onclick=""show_detalle('" & elemento & "'," & rs2("numElementos") &",'prueba_sistema')""><font color=""#FFFFFF"">" & rs2("numElementos") & "</font></td>" )  
+	response.write("<td bgcolor=""#95b3d7"" align=""center"" onclick=""show_detalle('" & elemento & "'," & rs2("numElementos") &",'plasticos')""><font color=""#FFFFFF"">" & rs2("numElementos") & "</font></td>" )  
 end if
 
 rs2.close
@@ -297,7 +297,7 @@ cargaProveedores2=response.write(regresar)
 End Function
 
 
-function cargaElementosprueba_sistema_paso2(elemento, proveedor)
+function cargaElementosPlasticos_paso2(elemento, proveedor)
 set conn3=server.CreateObject("adodb.connection")
 set rs2=server.CreateObject("adodb.recordset")
 conn3.open connstr
@@ -319,16 +319,16 @@ regresar=""
 rs2.open sql3, conn3
 
 if rs2.eof then
-	cargaElementosprueba_sistema_paso2=response.write("<td bgcolor=""#95b3d7"" align=""center"" onclick=""alert('NO EXISTE DETALLE')""><font color=""#FFFFFF"">0</font></td>")
+	cargaElementosPlasticos_paso2=response.write("<td bgcolor=""#95b3d7"" align=""center"" onclick=""alert('NO EXISTE DETALLE')""><font color=""#FFFFFF"">0</font></td>")
 else
-	regresar=regresar & "<td bgcolor=""#95b3d7"" align=""center"" onclick=""show_detalle('" & elemento & "'," & rs2("numElementos") &",'prueba_sistema')""><font color=""#FFFFFF"">" & rs2("numElementos") & "</font></td>"   
+	regresar=regresar & "<td bgcolor=""#95b3d7"" align=""center"" onclick=""show_detalle('" & elemento & "'," & rs2("numElementos") &",'plasticos')""><font color=""#FFFFFF"">" & rs2("numElementos") & "</font></td>"   
 end if
 
 rs2.close
 conn3.close 
 set rs2=nothing
 set conn3=nothing
-cargaElementosprueba_sistema_paso2=response.write(regresar)
+cargaElementosPlasticos_paso2=response.write(regresar)
 end function
 
 function comparteCon (item_gemalto)

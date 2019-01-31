@@ -1,13 +1,13 @@
 ﻿<%
-ConnStr="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=prueba_sistema; uid=root;pwd=; option=3"
-ConnStr2="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=prueba_sistema; uid=root;pwd=; option=3"
+ConnStr="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=pasa; uid=root;pwd=; option=3"
+ConnStr2="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=pasa; uid=root;pwd=; option=3"
 
 
 Function buscaUsuario(usuario,pass)
 set conn2=server.CreateObject("adodb.connection")
 set rs=server.CreateObject("adodb.recordset")
 conn2.open connstr
-sql= "SELECT  * from prueba_sistema_login where login_usuario = '"& usuario &"' and login_pass = '"& pass &"'" 
+sql= "SELECT  * from app_bnrt_login where login_usuario = '"& usuario &"' and login_pass = '"& pass &"'" 
 rs.open sql, conn2
 if rs.eof then
 buscaUsuario=1
@@ -29,7 +29,7 @@ Function buscaNombre(usuario)
 set conn2=server.CreateObject("adodb.connection")
 set rs=server.CreateObject("adodb.recordset")
 conn2.open connstr
-sql= "SELECT  * from prueba_sistema_login where login_usuario = '"& usuario &"'" 
+sql= "SELECT  * from app_bnrt_login where login_usuario = '"& usuario &"'" 
 rs.open sql, conn2
 if rs.eof then
 buscaNombre=1
@@ -119,11 +119,11 @@ sql= "select count(*) as sucursales  from tseguimiento a LEFT JOIN cat_sucursale
 end if
 
 if not(supervisor="") and division="" then
-sql= "select count(*) as sucursales  from tseguimiento a LEFT JOIN cat_sucursales b on a.cr=b.cr LEFT JOIN prueba_sistema_login c on a.supervisorAsignado=c.login_id where EstatusObra in ('" & estatus  & "') and c.login_nombre='" & supervisor & "'"
+sql= "select count(*) as sucursales  from tseguimiento a LEFT JOIN cat_sucursales b on a.cr=b.cr LEFT JOIN app_bnrt_login c on a.supervisorAsignado=c.login_id where EstatusObra in ('" & estatus  & "') and c.login_nombre='" & supervisor & "'"
 end if
 
 if not(supervisor="") and not(division="") then
-sql= "select count(*) as sucursales  from tseguimiento a LEFT JOIN cat_sucursales b on a.cr=b.cr LEFT JOIN prueba_sistema_login c on a.supervisorAsignado=c.login_id where EstatusObra in ('" & estatus  & "') and c.login_nombre='" & supervisor & "' and b.Territorial='" & division & "' ;"
+sql= "select count(*) as sucursales  from tseguimiento a LEFT JOIN cat_sucursales b on a.cr=b.cr LEFT JOIN app_bnrt_login c on a.supervisorAsignado=c.login_id where EstatusObra in ('" & estatus  & "') and c.login_nombre='" & supervisor & "' and b.Territorial='" & division & "' ;"
 end if
 
 if supervisor="" and division="" then
@@ -148,7 +148,7 @@ set rs=server.CreateObject("adodb.recordset")
 conn2.open connstr
 
 if not(supervisor="") then
-sql= "select count(*) as sucursales  from tseguimiento a LEFT JOIN cat_sucursales b on a.cr=b.cr LEFT JOIN prueba_sistema_login c on a.supervisorAsignado=c.login_id LEFT JOIN cat_gerentes_supervisores d on a.supervisorAsignado = d.id_supervisor where EstatusObra in ('" & estatus & "') and c.login_nombre='" & supervisor & "' and d.id_gerente='" &gerente &"';"
+sql= "select count(*) as sucursales  from tseguimiento a LEFT JOIN cat_sucursales b on a.cr=b.cr LEFT JOIN app_bnrt_login c on a.supervisorAsignado=c.login_id LEFT JOIN cat_gerentes_supervisores d on a.supervisorAsignado = d.id_supervisor where EstatusObra in ('" & estatus & "') and c.login_nombre='" & supervisor & "' and d.id_gerente='" &gerente &"';"
 end if
 
 if supervisor=""  then
@@ -197,7 +197,7 @@ Function cargaSupervisoresDirector()
 set conn3=server.CreateObject("adodb.connection")
 set rs2=server.CreateObject("adodb.recordset")
 conn3.open connstr
-sql3= "select b.login_nombre from tseguimiento a LEFT JOIN prueba_sistema_login b on a.supervisorAsignado=b.login_id GROUP BY b.login_nombre"
+sql3= "select b.login_nombre from tseguimiento a LEFT JOIN app_bnrt_login b on a.supervisorAsignado=b.login_id GROUP BY b.login_nombre"
 regresar=""
 rs2.open sql3, conn3
 if rs2.eof then
@@ -223,7 +223,7 @@ Function cargaSupervisoresGerente(id_gerente)
 set conn3=server.CreateObject("adodb.connection")
 set rs2=server.CreateObject("adodb.recordset")
 conn3.open connstr
-sql3= "select * from prueba_sistema_login where login_id in (select id_supervisor from cat_gerentes_supervisores where id_gerente='" & id_gerente & "')"
+sql3= "select * from app_bnrt_login where login_id in (select id_supervisor from cat_gerentes_supervisores where id_gerente='" & id_gerente & "')"
 regresar=""
 rs2.open sql3, conn3
 if rs2.eof then
@@ -300,7 +300,7 @@ Function buscaSupervisor(supervisor)
 set conn4=server.CreateObject("adodb.connection")
 set rs4=server.CreateObject("adodb.recordset")
 conn4.open connstr
-sql4= "SELECT login_nombre from prueba_sistema_login where login_id = '"& supervisor &"'"
+sql4= "SELECT login_nombre from app_bnrt_login where login_id = '"& supervisor &"'"
 rs4.open sql4, conn4
 if rs4.eof then
 buscaSupervisor=""
@@ -375,7 +375,7 @@ Function buscaPerfil(usuario)
 set conn2=server.CreateObject("adodb.connection")
 set rs=server.CreateObject("adodb.recordset")
 conn2.open connstr
-sql= "select perfil from cat_perfil a LEFT JOIN prueba_sistema_login b on a.ID_PERFIL=b.login_privilegio where b.login_usuario='" & usuario & "'" 
+sql= "select perfil from cat_perfil a LEFT JOIN app_bnrt_login b on a.ID_PERFIL=b.login_privilegio where b.login_usuario='" & usuario & "'" 
 rs.open sql, conn2
 if rs.eof then
 buscaPerfil=1
@@ -437,7 +437,7 @@ End Function
 Function insertarLog(vusuario,vevento,vregistroAfectado,ip)
 set conn2=server.CreateObject("adodb.connection")
 conn2.open connstr2
-sql= "insert into prueba_sistema_log(usuario,evento,registroAfectado,ip_address) values ('" & vusuario & "', ' " & vevento & " ', '" & vregistroAfectado & "' , '" & ip & "')" 
+sql= "insert into app_bnrt_log(usuario,evento,registroAfectado,ip_address) values ('" & vusuario & "', ' " & vevento & " ', '" & vregistroAfectado & "' , '" & ip & "')" 
 Set objRS=Conn2.Execute(sql)
 if err=0 then
 	conn2.close 

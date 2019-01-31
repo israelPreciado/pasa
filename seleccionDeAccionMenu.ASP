@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel='SHORTCUT ICON' href='/pasa/images/favicon.ico' type='image/x-icon' />
 <title>Obras</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <link href="css/login.css" rel="stylesheet" type="text/css">
@@ -125,7 +126,7 @@
 <div id="pagina">
   <div id="header">
     <div id="logo">
-      <img src="images/logos/banorte.png"/>   
+      <img src="images/logo_pasa.png"/>   
     </div>
     <div id="barrasuperior">
       <table><tr><td><a class="a" href="#" style="padding-left:55%;"><span></span></a></td></tr></table>

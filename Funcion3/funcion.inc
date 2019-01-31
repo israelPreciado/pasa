@@ -1,8 +1,8 @@
 ﻿<%
-'ConnStr="DRIVER={MySQL ODBC 3.51 Driver};server=162.242.164.14;database=prueba_sistema; uid=xmd7550;pwd=XMD7550; option=3"
-'ConnStr2="DRIVER={MySQL ODBC 3.51 Driver};server=162.242.164.14;database=prueba_sistema; uid=xmd7550;pwd=XMD7550; option=3"
-ConnStr="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=prueba_sistema; uid=root;pwd=; option=3"
-ConnStr2="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=prueba_sistema; uid=root;pwd=; option=3"
+'ConnStr="DRIVER={MySQL ODBC 3.51 Driver};server=162.242.164.14;database=pasa; uid=xmd7550;pwd=XMD7550; option=3"
+'ConnStr2="DRIVER={MySQL ODBC 3.51 Driver};server=162.242.164.14;database=pasa; uid=xmd7550;pwd=XMD7550; option=3"
+ConnStr="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=pasa; uid=root;pwd=; option=3"
+ConnStr2="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=pasa; uid=root;pwd=; option=3"
 
 Function calculaAvanceGeneral(cr,tipoRespuesta)
 modulo1=0

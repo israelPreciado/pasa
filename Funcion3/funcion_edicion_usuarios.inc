@@ -1,7 +1,7 @@
 <%
-'ConnStr="DRIVER={MySQL ODBC 5.3 ANSI Driver};server=scanda500;database=prueba_sistema; uid=xmd7310;pwd=XMD7310; option=3"
-'ConnStr="DRIVER={MySQL ODBC 3.51 Driver};server=162.242.164.14;database=prueba_sistema; uid=xmd7550;pwd=XMD7550; option=3"
-ConnStr="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=prueba_sistema; uid=root;pwd=; option=3"
+'ConnStr="DRIVER={MySQL ODBC 5.3 ANSI Driver};server=scanda500;database=pasa; uid=xmd7310;pwd=XMD7310; option=3"
+'ConnStr="DRIVER={MySQL ODBC 3.51 Driver};server=162.242.164.14;database=pasa; uid=xmd7550;pwd=XMD7550; option=3"
+ConnStr="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=pasa; uid=root;pwd=; option=3"
 
 function cargaLlegadaMateriales(cr)
 set conn3=server.CreateObject("adodb.connection")
@@ -259,7 +259,7 @@ function cargaUsuarios()
 set conn3=server.CreateObject("adodb.connection")
 set rs2=server.CreateObject("adodb.recordset")
 conn3.open connstr
-sql3= "select * from prueba_sistema_login a LEFT JOIN cat_perfil b on a.login_privilegio =b.id_perfil where login_id<>1 order by login_nombre"
+sql3= "select * from app_bnrt_login a LEFT JOIN cat_perfil b on a.login_privilegio =b.id_perfil where login_id<>1 order by login_nombre"
 regresar=""
 rs2.open sql3, conn3
 if rs2.eof then
@@ -327,7 +327,7 @@ function cargaGerentesSupervisores()
 set conn3=server.CreateObject("adodb.connection")
 set rs2=server.CreateObject("adodb.recordset")
 conn3.open connstr
-sql3= "select a.*,b.login_nombre as Gerente, c.login_nombre as Supervisor from cat_gerentes_supervisores a LEFT JOIN prueba_sistema_login b on a.id_gerente=b.login_id LEFT JOIN prueba_sistema_login c on a.id_supervisor=c.login_id where b.login_id is not null and c.login_id is not null"
+sql3= "select a.*,b.login_nombre as Gerente, c.login_nombre as Supervisor from cat_gerentes_supervisores a LEFT JOIN app_bnrt_login b on a.id_gerente=b.login_id LEFT JOIN app_bnrt_login c on a.id_supervisor=c.login_id where b.login_id is not null and c.login_id is not null"
 regresar=""
 rs2.open sql3, conn3
 if rs2.eof then
@@ -808,7 +808,7 @@ Function cargaGerentes()
 set conn3=server.CreateObject("adodb.connection")
 set rs2=server.CreateObject("adodb.recordset")
 conn3.open connstr
-sql3= "select * from prueba_sistema_login where login_privilegio=5"
+sql3= "select * from app_bnrt_login where login_privilegio=5"
 regresar=""
 rs2.open sql3, conn3
 if rs2.eof then
@@ -834,7 +834,7 @@ Function cargaSupervisores()
 set conn3=server.CreateObject("adodb.connection")
 set rs2=server.CreateObject("adodb.recordset")
 conn3.open connstr
-sql3= "select * from prueba_sistema_login where login_privilegio=2"
+sql3= "select * from app_bnrt_login where login_privilegio=2"
 regresar=""
 rs2.open sql3, conn3
 if rs2.eof then
@@ -859,7 +859,7 @@ Function cargaSupervisoresId(id)
 set conn3=server.CreateObject("adodb.connection")
 set rs2=server.CreateObject("adodb.recordset")
 conn3.open connstr
-sql3= "select * from prueba_sistema_login where login_privilegio=2"
+sql3= "select * from app_bnrt_login where login_privilegio=2"
 regresar=""
 rs2.open sql3, conn3
 if rs2.eof then

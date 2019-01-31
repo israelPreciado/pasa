@@ -153,7 +153,7 @@ function asignarGerente(){
 	//cambiarClase2()	
 }
 function asignarGerente2(){
-	document.getElementById('anio').value="2018"
+	document.getElementById('anio').value="2019"
 	document.getElementById('frm_revisarAvance').action="EstimacionCostoObra.asp"
 	document.getElementById('frm_revisarAvance').submit()
 	//cambiarClase2()	
@@ -226,17 +226,17 @@ zona=buscaZonaTransformacion(cr)
    		<tr height="30%">
     		<td width="15%" height="137">&nbsp;</td>
      	</tr>
-     	<tr height="30%">
+     	<!--<tr height="30%">
      		<td width="15%" height="53">&nbsp;</td>
       		<td width="55%"><input  type="button" value="Alta Obra Civil Cat.2017" onclick="asignarGerente()" name="btnEnviar" /></td>
       		<td width="30%">&nbsp;</td>
-     	</tr>
+     	</tr>-->
 		<tr height="30%">
      		<td width="15%" height="53">&nbsp;</td>
-      		<td width="55%"><input  type="button" value="Alta Obra Civil Cat.2018" onclick="asignarGerente2()" name="btnEnviar" /></td>
+      		<td width="55%"><input  type="button" value="Alta Obra Civil Cat.2019" onclick="asignarGerente2()" name="btnEnviar" /></td>
       		<td width="30%">&nbsp;</td>
      	</tr>
-      <tr height="30%">
+      <!--<tr height="30%">
      		<td width="15%" height="53">&nbsp;</td>
       		<td width="55%"><input  type="button" value="Alta ATM's Cat.2017" onclick="editarUsuarios()" name="btnEnviar" /></td>
       		<td width="30%">&nbsp;</td>
@@ -245,7 +245,7 @@ zona=buscaZonaTransformacion(cr)
         <td width="15%" height="53">&nbsp;</td>
           <td width="55%"><input  type="button" value="Alta ATM's Cat.2018" onclick="editarUsuarios2()" name="btnEnviar" /></td>
           <td width="30%">&nbsp;</td>
-      </tr>
+      </tr>-->
     </table>
   <br/>
 <br/>

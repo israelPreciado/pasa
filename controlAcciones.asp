@@ -68,14 +68,14 @@ simulateClick(document.getElementById('cerrar'))
     
     <table cellspacing="0">
      <tr>
-      <td width="25%" rowspan="2"><img src="images/logos/banorte.png" /></td>
+      <td width="25%" rowspan="2"><img src="images/logo_pasa.png" /></td>
       <td width="40%"><p><strong>Direcci&oacute;n de Obras</strong></p></td>
-      <td bgcolor="#90191c" style="padding-left:3%" colspan="2"><p style="background-color: transparent"><font color="#FFFFFF"><strong><%=server.HTMLEncode(session.Contents("nombre_usuario"))%></strong></font></p></a></td>
+      <td bgcolor="#65A549" style="padding-left:3%" colspan="2"><p style="background-color: transparent"><font color="#FFFFFF"><strong><%=server.HTMLEncode(session.Contents("nombre_usuario"))%></strong></font></p></a></td>
      </tr>
       <tr>
       <td width="30%"><p style="background-color: transparent"><strong>Modulo de Asignaci&oacute;n de Obra</strong></p></td>
-      <td width="30%" bgcolor="#90191c"  style="padding-left:3%"><p style="background-color: transparent"><font color="#FFFFFF"><strong>Perfil: <%=buscaPerfil(session.Contents("xmd"))%></strong></font></p></td>
-	  <td width="30%" bgcolor="#90191c" align="center"><font color="#FFFFFF" style="font-size:150%"><strong><a href="cerrar_sesion.asp" class="one" id="cerrar" target = "general" style="text-decoration:none"><span class="icon-exit" ></span></a></strong></font></td>
+      <td width="30%" bgcolor="#65A549"  style="padding-left:3%"><p style="background-color: transparent"><font color="#FFFFFF"><strong>Perfil: <%=buscaPerfil(session.Contents("xmd"))%></strong></font></p></td>
+	  <td width="30%" bgcolor="#65A549" align="center"><font color="#FFFFFF" style="font-size:150%"><strong><a href="cerrar_sesion.asp" class="one" id="cerrar" target = "general" style="text-decoration:none"><span class="icon-exit" ></span></a></strong></font></td>
      </tr>
     </table>
     <div id="barrasuperior">

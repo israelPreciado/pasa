@@ -1,6 +1,6 @@
 ﻿<%
-ConnStr="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=prueba_sistema; uid=root;pwd=; option=3"
-ConnStr2="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=prueba_sistema; uid=root;pwd=; option=3"
+ConnStr="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=pasa; uid=root;pwd=; option=3"
+ConnStr2="DRIVER={MySQL ODBC 3.51 Driver};server=localhost;database=pasa; uid=root;pwd=; option=3"
 
 function buscarEstimacionCorrespondiente(cr)
 set conn2=server.CreateObject("adodb.connection")

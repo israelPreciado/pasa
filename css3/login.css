@@ -25,7 +25,7 @@
 
 .a{
  font-size:200%;
- color:#a40505;
+ color:#65A549;
 }
 .ascdc{
  font-size:16px;
@@ -112,7 +112,7 @@ height:100%;
 }
 .botonGrande{
  width:90%;
- background:#a40505;
+ background:#65A549;
  border:0;
  padding:5%;
  font-family:'Open Sans',sans-serif;
@@ -126,7 +126,7 @@ height:100%;
 }
 .botonChico{
  width:30%;
- background:#a40505;
+ background:#65A549;
  border:0;
  padding:5%;
  font-family:'Open Sans',sans-serif;
@@ -142,11 +142,11 @@ height:100%;
 
 
 input[type="button"]:hover{
- background:#f00404;
+ background:#008834;
 }
 .button{
  width:100%;
- background:#a40505;
+ background:#65A549;
  border:0;
  padding:7%;
  font-family:'Open Sans',sans-serif;
@@ -387,7 +387,7 @@ textarea[disabled]{
 
 input[type="button"]{
  width:106%;
- background:#a40505;
+ background:#65A549;
  border:0;
  padding:2%;
  text-wrap:none;
@@ -402,7 +402,7 @@ input[type="button"]{
 }
 input[type="regresar"]{
  width:106%;
- background:#a40505;
+ background:#65A549;
  border:0;
  padding:2%;
  text-wrap:none;
@@ -418,7 +418,7 @@ input[type="regresar"]{
 
 .botonGrande{
  width:100%;
- background:#a40505;
+ background:#65A549;
  border:0;
  font-family:'Open Sans',sans-serif;
  font-size:100%;
@@ -432,7 +432,7 @@ input[type="regresar"]{
 
 .botonChico{
  width:30%;
- background:#a40505;
+ background:#65A549;
  border:0;
  padding:5%;
  font-family:'Open Sans',sans-serif;
@@ -446,11 +446,11 @@ input[type="regresar"]{
 }
 
 input[type="button"]:hover{
- background:#f00404;
+ background:#008834;
 }
 .button{
  width:100%;
- background:#a40505;
+ background:#65A549;
  border:0;
  padding:7%;
  font-family:'Open Sans',sans-serif;
