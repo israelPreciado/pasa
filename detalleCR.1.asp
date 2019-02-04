@@ -364,41 +364,41 @@ end if%>
 
           <!-- START FALLA -->
           <div id="detalle">
-              <p>Estatus de Obra:<strong>
-                  <%if buscaReasignacion(session.Contents("cr"))= "1" then %>
-                  <!--<img src="images/indicadores/verde.png"/>--> En Tiempo Reprogramada
-                  <%else if (cDbl(calculaAvanceProyectado7030(session.Contents("cr"),rs12("fechaInicio")))>cDbl(calculaAvanceGeneral(session.Contents("cr"),"G"))) then %>
-                  <!--<img src="images/indicadores/rojo_1.png"/>-->
-                  <%else%>
-                  <!--<img src="images/indicadores/verde.png"/>-->
-                  <%end if%>
-                  <%=buscaEstatus(rs12("EstatusObra"))%>
-                  <%end if%></strong></p>
-              <table width="100%" align="center">
-                <tr>
-                  <td>
-                    <p>Prog: <strong>
-                        <%if buscaReasignacion(session.Contents("cr"))= "1" then response.write(calculaAvanceGeneral(session.Contents("cr"),"G")) else response.write(calculaAvanceProyectado7030(session.Contents("cr"),rs12("fechaInicio"))) end if%>
-                        % </strong></p>
-                  </td>
-                  <td align="right">
-                    <p><strong>Real:
-                        <%=calculaAvanceGeneral(session.Contents("cr"),"G")%> % </strong></p>
-                  </td>
-                </tr>
-                <%
-                end if
-              rs12.close
-              conn12.close 
-              set rs12=nothing
-              set conn12=nothing
-              %>
-              </table>
-            </div>
-            <br />
-            <!-- END FALLA -->
+            <p>Estatus de Obra:<strong>
+                <%if buscaReasignacion(session.Contents("cr"))= "1" then %>
+                <!--<img src="images/indicadores/verde.png"/>--> En Tiempo Reprogramada
+                <%else if (cDbl(calculaAvanceProyectado7030(session.Contents("cr"),rs12("fechaInicio")))>cDbl(calculaAvanceGeneral(session.Contents("cr"),"G"))) then %>
+                <!--<img src="images/indicadores/rojo_1.png"/>-->
+                <%else%>
+                <!--<img src="images/indicadores/verde.png"/>-->
+                <%end if%>
+                <%=buscaEstatus(rs12("EstatusObra"))%>
+                <%end if%></strong></p>
+            <table width="100%" align="center">
+              <tr>
+                <td>
+                  <p>Prog: <strong>
+                      <%if buscaReasignacion(session.Contents("cr"))= "1" then response.write(calculaAvanceGeneral(session.Contents("cr"),"G")) else response.write(calculaAvanceProyectado7030(session.Contents("cr"),rs12("fechaInicio"))) end if%>
+                      % </strong></p>
+                </td>
+                <td align="right">
+                  <p><strong>Real:
+                      <%=calculaAvanceGeneral(session.Contents("cr"),"G")%> % </strong></p>
+                </td>
+              </tr>
+              <%
+            end if
+            rs12.close
+            conn12.close 
+            set rs12=nothing
+            set conn12=nothing
+            %>
+            </table>
+          </div>
+          <br />
+          <!-- END FALLA -->
 
-            <%if session.Contents("privilegio")=2 then%>
+          <%if session.Contents("privilegio")=2 then%>
             <table width="80%" align="center">
               <tr>
                 <td align="center"><input class="botonGrande" type="button" value="Actualizar Reporte Obra" onclick="enviar()"

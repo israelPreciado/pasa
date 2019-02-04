@@ -33,20 +33,20 @@ end if%>
 
 	<FRAME SRC="inicioSupervisor.asp" NAME="contenido">
 <%else%>
-<%if session.Contents("privilegio")= 4 then%>
+    <%if session.Contents("privilegio")= 4 then%>
 
-	<FRAME SRC="inicioDirector.asp" NAME="contenido">
-<%else%>
+        <FRAME SRC="inicioDirector.asp" NAME="contenido">
+    <%else%>
 
-<%if session.Contents("privilegio")= 5 then%>
+        <%if session.Contents("privilegio")= 5 then%>
 
-	<FRAME SRC="inicioGerente.asp" NAME="contenido">
-<%else%>
+            <FRAME SRC="inicioGerente.asp" NAME="contenido">
+        <%else%>
 
-<FRAME SRC="inicioContratista.asp" NAME="contenido">
-<%end if%>
+            <FRAME SRC="inicioContratista.asp" NAME="contenido">
+        <%end if%>
 
-<%end if%>
+    <%end if%>
 <%end if%>
 </HEAD>
 

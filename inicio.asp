@@ -52,6 +52,7 @@
 	document.getElementById('hdd_cr').value=cr
 	document.getElementById('frm_informe_cr').action="detalleCR.asp"
 	sucDet(cr)
+	console.log('cr', cr);
  }
 
 function sucDet(cr){

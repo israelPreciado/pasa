@@ -241,7 +241,7 @@ territorial=request("hddn_territorial")
 					<table>
 						<thead><tr><th>CR</th><th>Tipo de Transformaci&oacute;n</th><th>Contratista Asignado</th><th>Supervisor Asignado</th></tr></thead>
 						<tbody>
-							<tr><td><font color="#000000"><%=cargaCRsAsignar()%></font></td><td><font color="#000000"><%=cargaTipoTransformacion()%></font></td><td><font color="#000000"><%=cargaContratistas()%></font></td><td><font color="#000000"><%=cargaSupervisores()%></font></td></tr>
+							<tr><td><font color="#000000"><%=cargaCRsAsignar()%></font></td><td><font color="#000000"><%=cargaTipoTransformacion()%></font></td><td><font color="#000000"><%=cargaContratistas(0)%></font></td><td><font color="#000000"><%=cargaSupervisores()%></font></td></tr>
 						</tbody>
 					</table>
                 </div>    
