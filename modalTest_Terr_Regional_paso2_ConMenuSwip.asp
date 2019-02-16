@@ -701,13 +701,13 @@ end if
 		<th width="3.70%">% Avance Prog</th>
 		<th width="11.11%" colspan="3">% Avance Real</th>
 		<th width="3.70%">O.Civil</th>
-		<th width="3.70%">Viniles</th>
+		<!--<th width="3.70%">Viniles</th>
 		<th width="3.70%">ATMS</th>
 		<th width="3.70%">Segur</th>
 		<th width="3.70%">Sumin</th>
 		<th width="3.70%">Se&ntilde; Ext</th>
 		<th width="3.70%">Sis Inst</th>
-		<th width="3.70%">A.A.</th>
+		<th width="3.70%">A.A.</th>-->
 	</tr>
 </thead>
 <tbody>
@@ -829,14 +829,16 @@ while not (rs1.eof)
  <td  style="text-align:center;"><font color="#000000"><%if rs1("avancereal") >= calculaAvanceProyectado7030(rs1("cr"),rs1("fechainicio")) then %><img class='semaforo' src='images/indicadores/verde.png'/><%else%><img class='semaforo' src='images/indicadores/rojo.png'/><%end if%></font></td>
  <td  style="text-align:center"><font color="#000000"><%if rs1("avancereal") ="100" then%>Terminada <% else if calculaAvanceProyectado7030(rs1("cr"),rs1("fechainicio"))="0" then%>Por Iniciar<%else if cdbl(rs1("avancereal")) >= cdbl(calculaAvanceProyectado7030(rs1("cr"),rs1("fechainicio"))) then %>En Tiempo<%else%>Con Atraso<%end if end if end if%></font></td>
  <td  style="text-align:center;"><font color="#000000"><%=round(rs1("avancereal"),2)%> %</font></td>
- <td  style="text-align:center;" onclick="showDetalleAvance2('<%=rs1("cr")%>',1)"><font color="#000000"><%=round(rs1("obra_civil"),2)%> %</font></td>
- <td  style="text-align:center;" onclick="showDetalleAvance('<%=rs1("cr")%>',2)"><font color="#000000"><%if calculaSemaforoPorModulo(2,rs1("cr"))="verde" then%><img class='semaforo' src='images/indicadores/verde.png'/><%else%><%if calculaSemaforoPorModulo(2,rs1("cr"))="amarillo" then%><img class='semaforo' src='images/indicadores/amarillo.png'/><%else%><img class='semaforo' src='images/indicadores/rojo.png'/><%end if%><%end if%> <%=round(rs1("viniles"),2)%> %</font></td>
- <td  style="text-align:center;" onclick="showDetalleAvance('<%=rs1("cr")%>',3)"><font color="#000000"><%if calculaSemaforoPorModulo(3,rs1("cr"))="verde" then%><img class='semaforo' src='images/indicadores/verde.png'/><%else%><%if calculaSemaforoPorModulo(3,rs1("cr"))="amarillo" then%><img class='semaforo' src='images/indicadores/amarillo.png'/><%else%><img class='semaforo' src='images/indicadores/rojo.png'/><%end if%><%end if%><%=round(rs1("ATMS"),2)%> %</font></td>
+ <td  style="text-align:center;" onclick="showDetalleAvance2('<%=rs1("cr")%>',1)"><font color="#000000"><%=rs1("obra_civil")%> %</font></td>
+ <!--
+ <td  style="text-align:center;" onclick="showDetalleAvance('<%=rs1("cr")%>',2)"><font color="#000000"><%if calculaSemaforoPorModulo(2,rs1("cr"))="verde" then%><img class='semaforo' src='images/indicadores/verde.png'/><%else%><%if calculaSemaforoPorModulo(2,rs1("cr"))="amarillo" then%><img class='semaforo' src='images/indicadores/amarillo.png'/><%else%><img class='semaforo' src='images/indicadores/rojo.png'/><%end if%><%end if%> <%=rs1("viniles")%> %</font></td>
+ <td  style="text-align:center;" onclick="showDetalleAvance('<%=rs1("cr")%>',3)"><font color="#000000"><%if calculaSemaforoPorModulo(3,rs1("cr"))="verde" then%><img class='semaforo' src='images/indicadores/verde.png'/><%else%><%if calculaSemaforoPorModulo(3,rs1("cr"))="amarillo" then%><img class='semaforo' src='images/indicadores/amarillo.png'/><%else%><img class='semaforo' src='images/indicadores/rojo.png'/><%end if%><%end if%><%=rs1("ATMS")%> %</font></td>
  <td  style="text-align:center;" onclick="showDetalleAvance('<%=rs1("cr")%>',4)"><font color="#000000"><%if calculaSemaforoPorModulo(4,rs1("cr"))="verde" then%><img class='semaforo' src='images/indicadores/verde.png'/><%else%><%if calculaSemaforoPorModulo(4,rs1("cr"))="amarillo" then%><img class='semaforo' src='images/indicadores/amarillo.png'/><%else%><img class='semaforo' src='images/indicadores/rojo.png'/><%end if%><%end if%><%=round(rs1("seguridad"),2)%> %</font></td>
  <td  style="text-align:center;" onclick="showDetalleAvance('<%=rs1("cr")%>',5)"><font color="#000000"><%if calculaSemaforoPorModulo(5,rs1("cr"))="verde" then%><img class='semaforo' src='images/indicadores/verde.png'/><%else%><%if calculaSemaforoPorModulo(5,rs1("cr"))="amarillo" then%><img class='semaforo' src='images/indicadores/amarillo.png'/><%else%><img class='semaforo' src='images/indicadores/rojo.png'/><%end if%><%end if%><%=round(rs1("suministros"),2)%> %</font></td>
  <td  style="text-align:center;" onclick="showDetalleAvance('<%=rs1("cr")%>',6)"><font color="#000000"><%if calculaSemaforoPorModulo(6,rs1("cr"))="verde" then%><img class='semaforo' src='images/indicadores/verde.png'/><%else%><%if calculaSemaforoPorModulo(6,rs1("cr"))="amarillo" then%><img class='semaforo' src='images/indicadores/amarillo.png'/><%else%><img class='semaforo' src='images/indicadores/rojo.png'/><%end if%><%end if%><%=round(rs1("senalizacionExt"),2)%> %</font></td>
  <td  style="text-align:center;" onclick="showDetalleAvance('<%=rs1("cr")%>',7)"><font color="#000000"><%if calculaSemaforoPorModulo(7,rs1("cr"))="verde" then%><img class='semaforo' src='images/indicadores/verde.png'/><%else%><%if calculaSemaforoPorModulo(7,rs1("cr"))="amarillo" then%><img class='semaforo' src='images/indicadores/amarillo.png'/><%else%><img class='semaforo' src='images/indicadores/rojo.png'/><%end if%><%end if%><%=round(rs1("sistemasinst"),2)%> %</font></td>
  <td  style="text-align:center;" onclick="showDetalleAvance('<%=rs1("cr")%>',9)"><font color="#000000"><%if calculaSemaforoPorModulo(9,rs1("cr"))="verde" then%><img class='semaforo' src='images/indicadores/verde.png'/><%else%><%if calculaSemaforoPorModulo(9,rs1("cr"))="amarillo" then%><img class='semaforo' src='images/indicadores/amarillo.png'/><%else%><img class='semaforo' src='images/indicadores/rojo.png'/><%end if%><%end if%><%=round(rs1("aa"),2)%> %</font></td>
+ -->
 </tr>
 <%
 

@@ -136,9 +136,9 @@
     <p><strong>Direcci&oacute;n de Obras</strong></p>
     <p>Modulo de supervisi&oacute;n de Obra</p>
     <div id="login">
-	  <input class="button" type="button" value="PLAN INMOBILIARIO" onclick="validar(1)" name="btnEnviar" />
-	  <input class="button" type="button" value="TRANSFORMACION" onclick="validar(2)" name="btnEnviar" />
-	  <input class="button" type="button" value="LOBBYS" onclick="validar(3)" name="btnEnviar" />
+	  <!-- <input class="button" type="button" value="PLAN INMOBILIARIO" onclick="validar(1)" name="btnEnviar" /> -->
+	  <input class="button" type="button" value="OBRAS" onclick="validar(2)" name="btnEnviar" />
+	  <!-- <input class="button" type="button" value="LOBBYS" onclick="validar(3)" name="btnEnviar" /> -->
       <input type="hidden" value="true"  name="hddnEnviar"/></td>
 
       <a href="#" id="alert" style="display:none"></a>

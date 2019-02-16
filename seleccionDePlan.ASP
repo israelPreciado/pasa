@@ -81,7 +81,7 @@ sucDet(plan)
 <div id="pagina">
   <div id="header">
     <div id="logo">
-      <img src="images/logos/banorte.png"/>   
+      <img src="images/logo_pasa.png"/>      
     </div>
     <div id="barrasuperior">
       <table><tr><td><a class="a" href="#" style="padding-left:55%;"><span></span></a></td></tr></table>
@@ -91,8 +91,8 @@ sucDet(plan)
     <p><strong>Direcci&oacute;n de Obras</strong></p>
     <p>Modulo de supervisi&oacute;n de Obra</p>
     <div id="login">
-	  <input class="button" type="button" value="Plan 2017" onclick="validar(1)" name="btnEnviar" />
-	  <input class="button" type="button" value="Plan 2018" onclick="validar(2)" name="btnEnviar" />
+	  <!-- <input class="button" type="button" value="Plan 2017" onclick="validar(1)" name="btnEnviar" /> -->
+	  <input class="button" type="button" value="Plan 2019" onclick="validar(2)" name="btnEnviar" />
       <input type="hidden" value="true"  name="hddnEnviar"/></td>
 
       <a href="#" id="alert" style="display:none"></a>

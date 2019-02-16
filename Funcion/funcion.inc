@@ -1234,7 +1234,9 @@ Function calculaAvanceGeneral(cr,tipoRespuesta)
 
 	promedio1=porcentajeAvanceSucursal(cr)
 
-	promedioGeneral=round(((promedio1*70)/100)+((promedio2*(30/7))/100)+((promedio3*(30/7))/100)+((promedio4*(30/7))/100)+((promedio5*(30/7))/100) +((promedio6*(30/7))/100) +((promedio7*(30/7))/100),2)+((promedio8*(30/7))/100)
+promedioGeneral=round(((promedio1*100)/100),2)
+
+	'promedioGeneral=round(((promedio1*70)/100)+((promedio2*(30/7))/100)+((promedio3*(30/7))/100)+((promedio4*(30/7))/100)+((promedio5*(30/7))/100) +((promedio6*(30/7))/100) +((promedio7*(30/7))/100),2)+((promedio8*(30/7))/100)
 	'promedioGeneral=round((round((calculaPromedio(modulo1,elementos1)*70)/100,2)+round((calculaPromedio(modulo2,elementos2)*5)/100,2)+round((calculaPromedio(modulo3,elementos3)*5)/100,2)+round((calculaPromedio(modulo4,elementos4)*5)/100,2)+round((calculaPromedio(modulo5,elementos5)*5)/100,2)+round((calculaPromedio(modulo6,elementos6)*5)/100,2)+round((calculaPromedio(modulo7,elementos7)*5)/100,2)),2)
 
 	if tipoRespuesta="G" then
